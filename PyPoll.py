@@ -20,11 +20,14 @@ with open(file_to_load) as election_data:
 #Create a filename variable to a direct or indirect path to the file
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
-#Use the open statement to open the file as a text file.
+#Use the open statement to open the file as a text file and create data.
 with open(file_to_save, "w") as txt_file:
+  txt_file.write("\nArapahoe\nDenver\nJefferson")  
 
-#Create data in file
-  txt_file.write("Arapahoe, ")
-  txt_file.write("Denver, ")
-  txt_file.write("Jefferson")
+# To do read and analyze data
+with open(file_to_load) as election_data:
+  file_reader = csv.reader(election_data)
 
+  # Read & Print header row in the CSV file
+  headers = next(file_reader)
+  print(headers)

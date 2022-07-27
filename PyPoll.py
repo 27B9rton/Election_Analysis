@@ -43,4 +43,12 @@ with open(file_to_load) as election_data:
 
     #add to the total vote count.
     total_votes +=1
-    print(total_votes)
+
+    #Print Candidate Name from each row
+    candidate_name = row[2]
+
+    # Add candidate name to candidate options
+    if candidate_name not in candidate_options:
+        candidate_options.append(candidate_name)
+
+print(candidate_options)

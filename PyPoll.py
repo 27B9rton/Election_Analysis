@@ -23,11 +23,14 @@ total_votes = 0
 
 candidate_options = []
 
-# Open the election results and read the file.
-with open(file_to_load) as election_data:
+#Create dictionary for votes per Candidate
+candidate_votes = {}
 
-    # Print the file object.
-     print(election_data)
+# # Open the election results and read the file. 
+# with open(file_to_load) as election_data:
+
+#     # Print the file object.
+#      print(election_data)
 
 
 # To do read and analyze data
@@ -49,6 +52,18 @@ with open(file_to_load) as election_data:
 
     # Add candidate name to candidate options
     if candidate_name not in candidate_options:
+       
         candidate_options.append(candidate_name)
+       
+       #Track Candidates vote count
+        candidate_votes[candidate_name] = 0
+    
+    candidate_votes[candidate_name]+= 1
 
-print(candidate_options)
+
+print(candidate_votes)
+
+for candidate_name in candidate_votes:
+  votes = candidate_votes[candidate_name]
+  votepercentage = float(votes) / float(total_votes) * 100
+  print(f'{candidate_name} received {votepercentage} percent of the vote ')

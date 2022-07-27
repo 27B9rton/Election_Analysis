@@ -83,6 +83,8 @@ with open(file_to_save, "w") as txt_file:
         votepercentage = float(votes) / float(total_votes) * 100
         #print(f"{candidate_name}: {votepercentage:.1f}% ({votes:,})\n")
         candidate_results = (f"{candidate_name}: {votepercentage:.1f}% ({votes:,})\n")
+       
+        #print candidate results
         print(candidate_results)
         txt_file.write(candidate_results)
 
@@ -102,5 +104,7 @@ with open(file_to_save, "w") as txt_file:
     f"Winning Percentage: {winning_percentage:.1f}%\n"
     f"----------------------------\n")
 
-  #print(winning_candidate_summary)
+  print(winning_candidate_summary)
+
+  txt_file.write(winning_candidate_summary)
   

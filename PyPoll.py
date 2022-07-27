@@ -14,9 +14,9 @@ file_to_load = os.path.join("Resources", "election_results.csv")
 #Create a filename variable to a direct or indirect path to the file
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
-#Use the open statement to open the file as a text file and create data.
-with open(file_to_save, "w") as txt_file:
-  txt_file.write("\nArapahoe\nDenver\nJefferson")  
+# #Use the open statement to open the file as a text file and create data.
+# with open(file_to_save, "w") as txt_file:
+#   txt_file.write("\nArapahoe\nDenver\nJefferson")  
 
 #Set Voter Counter to 0
 total_votes = 0
@@ -66,29 +66,38 @@ with open(file_to_load) as election_data:
     
     candidate_votes[candidate_name]+= 1
 
+#Save results to text file    
+with open(file_to_save, "w") as txt_file:
 
-print(candidate_votes)
+  election_results =(
+          f"\nElection Results\n"
+          f"-------------------------\n"
+          f"Total Votes: {total_votes:,}\n"
+          f"-------------------------\n")
+  print(election_results, end="")
+      # Save the final vote count to the text file.
+  txt_file.write(election_results)
 
-for candidate_name in candidate_votes:
-      votes = candidate_votes[candidate_name]
-      votepercentage = float(votes) / float(total_votes) * 100
-      print(f"{candidate_name}: {votepercentage:.1f}% ({votes:,})\n")
+  for candidate_name in candidate_votes:
+        votes = candidate_votes[candidate_name]
+        votepercentage = float(votes) / float(total_votes) * 100
+        #print(f"{candidate_name}: {votepercentage:.1f}% ({votes:,})\n")
 
 
-      if (votes > winning_count) and (votepercentage > winning_percentage):
-  # 2. If true then set winning_count = votes and winning_percent =
-  # vote_percentage.
-          winning_count = votes
-          winning_percentage = votepercentage
-  # 3. Set the winning_candidate equal to the candidate's name.
-          winning_candidate = candidate_name
+        if (votes > winning_count) and (votepercentage > winning_percentage):
+    # 2. If true then set winning_count = votes and winning_percent =
+    # vote_percentage.
+            winning_count = votes
+            winning_percentage = votepercentage
+    # 3. Set the winning_candidate equal to the candidate's name.
+            winning_candidate = candidate_name
 
-#winning candidate summary
-winning_candidate_summary = (
-  f"---------------------------\n"
-  f"Winner: {winning_candidate}\n"
-  f"Winner Vote Count: {winning_count:,}\n"
-  f"Winning Percentage: {winning_percentage:.1f}%\n"
-  f"----------------------------\n")
+  #winning candidate summary
+  winning_candidate_summary = (
+    f"---------------------------\n"
+    f"Winner: {winning_candidate}\n"
+    f"Winner Vote Count: {winning_count:,}\n"
+    f"Winning Percentage: {winning_percentage:.1f}%\n"
+    f"----------------------------\n")
 
-print(winning_candidate_summary)
+  #print(winning_candidate_summary)

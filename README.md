@@ -9,8 +9,8 @@ Colorado Board of Elections has asked us to review and audit the recent local el
 The election analysis shows that:
 - There were 369,711 total votes cast.
 - Denver had the highest voter turnout with 306,055 votes. That is 82.78% of the total vote.
-- Jefferson County was next with 38,855 votes cast. Tha'ts 10.51% of the total vote.
-- Arapahoe County had 24,801 votes cast. This is 6.71% of the total vote.
+- Jefferson County was next with 38,855 votes cast. That's 10.51% of the total vote.
+- Arapahoe County had 24,801 votes cast, which is 6.71% of the total vote.
 
 
 - There were 3 total candidates

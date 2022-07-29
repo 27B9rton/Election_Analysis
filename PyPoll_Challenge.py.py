@@ -19,7 +19,7 @@ candidate_votes = {}
 
 # 1: Create a county list and county votes dictionary.
 counties = []
-counties_votes = {counties, county_votes}
+counties_votes = {}
 
 
 

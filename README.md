@@ -1,7 +1,8 @@
 # Election_Analysis
 Election Analysis using software Python 3.9.5. and Visual Studio Code
 
-##Project Overview
+## Project Overview
+
 Colorado Board of Elections has asked us to review and audit the recent local election to find the winner as well as voter turnout by county.
 
 ## Summary
